@@ -8,18 +8,80 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+     @IBOutlet weak var tableView: UITableView!
+     
+     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+     
+     var items: [Item] = []
+     
 
      override func viewDidLoad() {
           super.viewDidLoad()
-          // Do any additional setup after loading the view, typically from a nib.
+          
+          tableView.delegate = self
+          tableView.dataSource = self
+     }
+     
+     override func viewWillAppear(_ animated: Bool) {
+     
+          getData()
+          tableView.reloadData()
+     }
+     
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+          return items.count
+          
+     }
+     
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     
+          let cell = UITableViewCell()
+          let item = items[indexPath.row]
+          
+          if let myName = item.name {
+               cell.textLabel?.text = myName
+               
+          }
+          
+          return cell
+     }
+     
+     func getData() {
+          
+          do {
+               
+          items = try context.fetch(Item.fetchRequest())
+               
+          } catch {
+               
+          print("Fetching Failed")
+          
+          }
      }
 
-     override func didReceiveMemoryWarning() {
-          super.didReceiveMemoryWarning()
-          // Dispose of any resources that can be recreated.
+     
+     
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     
+          if editingStyle == .delete {
+               
+               let item = items[indexPath.row]
+               
+               context.delete(item)
+               
+               (UIApplication.shared.delegate as! AppDelegate).saveContext()
+               
+               do {
+                    items = try context.fetch(Item.fetchRequest())
+               } catch {
+                    print("Fetching Failed")
+               }
+               
+          }
+          
+          tableView.reloadData()
      }
-
-
 }
 

@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tNe-57-m1e">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreDataSwift3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,103 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cs0-Ko-rjS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2PG-jA-Uqq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <items>
+                                    <navigationItem title="2016 Xmas Presents List" id="dba-TD-d6G">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="giF-eb-Ddi">
+                                            <color key="tintColor" red="0.86666666670000003" green="0.17254901959999999" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="tNe-57-m1e" kind="popoverPresentation" popoverAnchorBarButtonItem="giF-eb-Ddi" id="LZQ-KH-cak">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cs0-Ko-rjS" firstAttribute="top" secondItem="2PG-jA-Uqq" secondAttribute="bottom" id="2xN-Je-wQn"/>
+                            <constraint firstItem="2PG-jA-Uqq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LKk-Vy-5v0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cs0-Ko-rjS" secondAttribute="bottom" id="ZXj-sm-1ps"/>
+                            <constraint firstAttribute="trailing" secondItem="cs0-Ko-rjS" secondAttribute="trailing" id="fIy-Zf-yHT"/>
+                            <constraint firstItem="2PG-jA-Uqq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fic-dO-iqs"/>
+                            <constraint firstItem="cs0-Ko-rjS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mRQ-I6-l4u"/>
+                            <constraint firstAttribute="trailing" secondItem="2PG-jA-Uqq" secondAttribute="trailing" id="oB6-rc-MPL"/>
+                            <constraint firstItem="cs0-Ko-rjS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="oJJ-qQ-k4d"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Jky-hI-UFb"/>
+                    <connections>
+                        <outlet property="tableView" destination="cs0-Ko-rjS" id="dTs-3D-rkk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-524" y="376"/>
+        </scene>
+        <!--Add Item View Controller-->
+        <scene sceneID="LJF-m4-hDd">
+            <objects>
+                <viewController id="tNe-57-m1e" customClass="AddItemViewController" customModule="CoreDataSwift3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Zf-S7-GSJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kom-VZ-B8v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UeB-d3-8MB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaO-D0-MQm">
+                                <rect key="frame" x="118" y="301.5" width="139" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="CmQ-lM-1GL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Add to iPhone">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="tNe-57-m1e" eventType="touchUpInside" id="uDN-VB-dLN"/>
+                                    <segue destination="BYZ-38-t0r" kind="popoverPresentation" popoverAnchorView="iaO-D0-MQm" id="x2b-wd-WpX">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Xmas presents" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBO-BO-m8O">
+                                <rect key="frame" x="56" y="70" width="263" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Uy-SS-el3"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iaO-D0-MQm" firstAttribute="centerY" secondItem="UeB-d3-8MB" secondAttribute="centerY" id="6Aq-Oi-BQB"/>
+                            <constraint firstItem="iaO-D0-MQm" firstAttribute="centerX" secondItem="UeB-d3-8MB" secondAttribute="centerX" id="8MG-wh-2Ha"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RBO-BO-m8O" secondAttribute="trailing" constant="40" id="F3S-ZV-qd1"/>
+                            <constraint firstItem="RBO-BO-m8O" firstAttribute="top" secondItem="8Zf-S7-GSJ" secondAttribute="bottom" constant="50" id="Fju-Q6-Wy8"/>
+                            <constraint firstItem="RBO-BO-m8O" firstAttribute="leading" secondItem="UeB-d3-8MB" secondAttribute="leadingMargin" constant="40" id="PO7-ee-nlH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="itemTextField" destination="RBO-BO-m8O" id="7DY-N0-DOw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPN-dW-mhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="370" y="376"/>
         </scene>
     </scenes>
 </document>

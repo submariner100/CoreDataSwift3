@@ -15,6 +15,7 @@
 		271DE3341E1419B2005E90E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271DE3321E1419B2005E90E4 /* LaunchScreen.storyboard */; };
 		271DE33F1E1419B2005E90E4 /* CoreDataSwift3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE33E1E1419B2005E90E4 /* CoreDataSwift3Tests.swift */; };
 		271DE34A1E1419B2005E90E4 /* CoreDataSwift3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE3491E1419B2005E90E4 /* CoreDataSwift3UITests.swift */; };
+		271DE3581E141B1F005E90E4 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271DE3571E141B1F005E90E4 /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		271DE3451E1419B2005E90E4 /* CoreDataSwift3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataSwift3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271DE3491E1419B2005E90E4 /* CoreDataSwift3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSwift3UITests.swift; sourceTree = "<group>"; };
 		271DE34B1E1419B2005E90E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		271DE3571E141B1F005E90E4 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				271DE3261E1419B2005E90E4 /* AppDelegate.swift */,
 				271DE3281E1419B2005E90E4 /* ViewController.swift */,
 				271DE32A1E1419B2005E90E4 /* Main.storyboard */,
+				271DE3571E141B1F005E90E4 /* AddItemViewController.swift */,
 				271DE3301E1419B2005E90E4 /* Assets.xcassets */,
 				271DE3321E1419B2005E90E4 /* LaunchScreen.storyboard */,
 				271DE3351E1419B2005E90E4 /* Info.plist */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271DE3291E1419B2005E90E4 /* ViewController.swift in Sources */,
+				271DE3581E141B1F005E90E4 /* AddItemViewController.swift in Sources */,
 				271DE32F1E1419B2005E90E4 /* CoreDataSwift3.xcdatamodeld in Sources */,
 				271DE3271E1419B2005E90E4 /* AppDelegate.swift in Sources */,
 			);
@@ -516,6 +520,7 @@
 				271DE3501E1419B2005E90E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		271DE3511E1419B2005E90E4 /* Build configuration list for PBXNativeTarget "CoreDataSwift3Tests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +529,7 @@
 				271DE3531E1419B2005E90E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		271DE3541E1419B2005E90E4 /* Build configuration list for PBXNativeTarget "CoreDataSwift3UITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +538,7 @@
 				271DE3561E1419B2005E90E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
